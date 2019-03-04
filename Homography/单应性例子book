@@ -1,28 +1,19 @@
 单应性例子：https://blog.csdn.net/xuyangcao123/article/details/70916767
 单应性变换就是一个平面到另一个平面的映射关系。
-
-
 如图，两张图片中相同颜色的点叫做corresponding Points，比如两个红点就是一对corresponding points。单应性矩阵(Homography)就是一个从一张图像到另一张图像映射关系的转换矩阵(3*3)。可以由下面的公式来表示：
-
-
 以图像中的红点为例，可以将单应性变换写成如下形式：
-
-
 Python实现：
-
-
     import cv2
     import numpy as np
     import pylab as pl
      
     if __name__ == '__main__' :
-        
-     
+    
         # Read source image.
         im_src = cv2.imread('book2.jpg')
-        # Four corners of the book in source image
+        # Four corners of the book in source image.[x,  y]
         pts_src = np.array([[167.0, 264.0], [482.0, 798.0], [1079.0, 403.0],[613.0, 84.0]])
-     
+        #                      
      
         # Read destination image.
         im_dst = cv2.imread('book1.jpg')
